@@ -18,30 +18,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            UserDirectoryApplicationTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            UserDirectoryApp()
         }
     }
 }
 
+@androidx.compose.ui.tooling.preview.Preview(
+    showBackground = true,
+    widthDp = 400,
+    heightDp = 800
+)
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    UserDirectoryApplicationTheme {
-        Greeting("Android")
-    }
+fun MainActivityPreview() {
+    UserDirectoryApp()
 }
